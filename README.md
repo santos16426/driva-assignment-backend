@@ -31,4 +31,4 @@ cd <project_folder>
 
 ## Testing
 
-//WIP
+- Use Jest: `npm test`

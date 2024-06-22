@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { submitLoanRequest, validateLoanRequest, getLendersList } from '../controllers/offerController';
+import { submitLoanRequest, getLendersList } from '../controllers/offerController';
 import { sanitizeInputs } from '../middleware/sanitizeInputs';
+import { validateLoanRequest } from '../middleware/validateInputs';
 
 const router = Router();
 router.get('/', (req,res) => { res.send('Hello world!') })

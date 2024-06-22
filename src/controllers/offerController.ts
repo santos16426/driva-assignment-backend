@@ -4,15 +4,11 @@ import { calculate } from '../utils/generateLenderOffers';
 import { LoanRequest } from '../types';
 import { getLenderById, lenders } from '../services';
 
-export const validateLoanRequest = [
-  body('loanValue').isNumeric().withMessage('Loan value must be a number'),
-  body('term').isInt({ min: 1 }).withMessage('Term must be a positive integer')
-];
 
 export const submitLoanRequest = (req: Request, res: Response) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+  const errors = validationResult(req).array();
+  if (errors.length) {
+    return res.status(400).json({ errors });
   }
 
   const { id } = req.params;
