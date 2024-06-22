@@ -32,3 +32,18 @@ cd <project_folder>
 ## Testing
 
 - Use Jest: `npm test`
+
+## Back-End Architecture
+- **Technology Stack**: Express with TypeScript.
+- **Server Setup**: Configured an Express server using TypeScript for type safety and maintainability.
+- **Data Handling**: Utilizes in-memory storage temporary data management.
+## Endpoints:
+
+- **GET** `/`: Test
+- **GET** `/offers`: Retrieves a list of lenders.
+- **POST** `/submit/:id`: Submits the loan application and returns lender offers.
+
+- **Data Validation and Security**: Implemented using middleware:
+  - **Validation**: express-validator ensures the correctness of incoming data.
+  - **Sanitization**: Middleware sanitizes inputs to prevent injection attacks.
+  - **Security**: Basic security practices such as input validation and sanitization are implemented to secure the application.
